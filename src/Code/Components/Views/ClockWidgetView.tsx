@@ -56,7 +56,7 @@ export default class ClockWidgetView extends Component<ClockWidgetViewProps, Clo
     render() {
         return (
             <div>
-                <span>{this.state.data.getHours()}:{this.state.data.getMinutes()}:{this.state.data.getSeconds()}</span>
+                <span className={"sm"}>{this.state.data.getHours()}:{this.state.data.getMinutes()}:{this.state.data.getSeconds()}</span>
             </div>
         );
     }

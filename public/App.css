@@ -3,6 +3,8 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
 }
 
 #root {
@@ -15,7 +17,23 @@ html, body {
 #container {
     padding: 0;
     background-color: black;
-    color: white;
+    color: #d8fff9;
     height: 100%;
     width: 100%;
+}
+
+span.xl {
+    font-size:5em;
+}
+
+span.lg {
+    font-size: 3.5em;
+}
+
+span.md {
+    font-size: 2.5em;
+}
+
+span.sm {
+    font-size: 1.75em;
 }

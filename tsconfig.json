@@ -7,10 +7,10 @@
       "esnext"
     ],
     "types": [
-        "node",
-        "react",
-        "react-dom",
-        "jest"
+      "node",
+      "react",
+      "react-dom",
+      "jest"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -22,7 +22,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "strict": true
   },
   "include": [
     "src"
