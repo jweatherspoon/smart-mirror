@@ -1,20 +1,41 @@
 import React, { Component } from 'react';
 import TimeService from '../../Services/TimeService';
 
-// view property interface
+/**
+ * Clock widget property contract 
+ * @interface
+ */
 interface ClockWidgetViewProps {
 
 }
 
-// view state contract
+/**
+ * Clock widget state contract 
+ * @interface 
+ */
 interface ClockWidgetViewState {
-    service: TimeService,
-    data: Date
+    /**
+     * @var {TimeService} service The service used to get the current time
+     */
+    service: TimeService;
+
+    /**
+     * @var {Date} data The data returned by the api 
+     */
+    data: Date;
 }
 
-// Widget for displaying the current time
+/**
+ * Clock widget 
+ * @class
+ * @extends Component 
+ */
 export default class ClockWidgetView extends Component<ClockWidgetViewProps, ClockWidgetViewState> {
-    // Create a clock widget
+    /**
+     * Create a clock widget
+     * @param {ClockWidgetViewProps} props Properties
+     * @constructor
+     */
     constructor(props : ClockWidgetViewProps) {
         super(props);
         this.state = {
@@ -29,7 +50,9 @@ export default class ClockWidgetView extends Component<ClockWidgetViewProps, Clo
         this.state.service.start(1000, false);
     }
 
-    // Render the widget
+    /**
+     * Render the component
+     */
     render() {
         return (
             <div>

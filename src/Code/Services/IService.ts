@@ -1,14 +1,23 @@
-// Service contract
+/**
+ * Service contract
+ * @interface 
+ */
 export default interface IService {
-    // Start the service
+    /**
+     * Start the service
+     * @param updateRate The rate at which the service will update its data
+     * @param startInstantly Set to true to immediately update the service
+     */
     start(updateRate : number, startInstantly : boolean) : void;
 
-    // Stop the service
+    /**
+     * Stop the service
+     */
     stop() : void;
 
-    // Manually call the service 
+    /**
+     * Update the service's current data
+     * @returns {any} The current data
+     */
     update() : any;
-
-    // Callback on update
-    callback : any;
 }

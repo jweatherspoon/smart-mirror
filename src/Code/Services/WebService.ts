@@ -1,6 +1,14 @@
 import BasicService from "./BasicService";
 
-// Base service for services that utilize external web apis
+/**
+ * Base services for those utilizing external web apis
+ * @abstract
+ * @class 
+ * @extends BasicService
+ */
 export default abstract class WebService extends BasicService {
+    /**
+     * @var {string} apiUrl The url of the external web api
+     */
     protected apiUrl : string = "";
 }

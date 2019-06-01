@@ -3,16 +3,18 @@ import IService from "./IService";
 // Base service for deriving non-web services from
 export default abstract class BasicService implements IService {
     // Update rate
-    protected updateRate: number = 1000;
+    private updateRate: number = 1000;
 
-    // The id of the interval
-    protected interval : NodeJS.Timer;
-    
-    constructor() {
-        console.log("BasicService created.");
-    }
+    /**
+     * The interval for the service
+     */
+    private interval : NodeJS.Timer;
 
-    // Start the service
+    /**
+     * Start the service
+     * @param updateRate The rate at which the service will update its data
+     * @param startInstantly Set to true to immediately update the service
+     */
     start(updateRate: number, startInstantly : boolean): void {
         this.updateRate = updateRate;
         if (!this.interval) {
@@ -24,17 +26,26 @@ export default abstract class BasicService implements IService {
         }
     }
     
-    // Stop the service
+    /**
+     * Stop the service
+     */
     stop(): void {
         clearInterval(this.interval)
     }
-    
-    // Update the currently stored data
+
+    /**
+     * @var {Function} callback A callback on update that is passed the current time
+     */
+    protected callback: any = null;
+
+    /**
+     * Update the service's current data
+     * @returns {any} The current data
+     */
     abstract update() : any;
     
-    // Get the most recently available data 
+    /**
+     * Get the most recent api data
+     */
     abstract get data() : any;
-
-    // callback on update
-    abstract callback : any;
 }

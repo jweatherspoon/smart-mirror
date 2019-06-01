@@ -1,21 +1,29 @@
 import BasicService from "./BasicService";
 
-// Service for returning the current time
+/**
+ * Service to get the current time 
+ * @class 
+ * @extends BasicService
+ */
 class TimeService extends BasicService {
-    // The stored api data 
-    currentData : Date = new Date(0);
+    /**
+     * @var {Date} currentData The current time
+     */ 
+    private currentData : Date = new Date(0);
     
-    // callback on update 
-    callback : any = null;
-
+    /**
+     * Create an instance of the time service
+     * @constructor
+     */
     constructor() {
         super();
-        console.log("TimeService created.");
     }
 
-    // Update the current time
+    /**
+     * Update the current time
+     * @returns {Date} The current time
+     */
     update() : Date {
-        console.log("time service update");
         this.currentData = new Date();
 
         if (this.callback) {
@@ -25,7 +33,9 @@ class TimeService extends BasicService {
         return this.currentData;
     }    
     
-    // Get the current time
+    /**
+     * Get the current time
+     */
     get data() : Date {
         return this.currentData;
     }
