@@ -34,9 +34,9 @@ export default abstract class BasicService implements IService {
     }
 
     /**
-     * @var {Function} callback A callback on update that is passed the current time
+     * @var {Function<any>} callback A callback on update that is passed the current time
      */
-    protected callback: any = null;
+    public callback: any = null;
 
     /**
      * Update the service's current data
