@@ -1,0 +1,16 @@
+language: node_js
+git:
+  depth: 3
+
+# safelist
+branches:
+  only:
+    - master
+
+matrix: 
+  include:
+    - name: "Component Unit Tests"
+      node_js: "10.15.0"
+      env: TEST_FOLDER=Tests/ComponentTests
+
+script: npm test --watchAll=false
