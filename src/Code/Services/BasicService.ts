@@ -6,16 +6,17 @@ export default abstract class BasicService implements IService {
     protected updateRate: number = 1000;
 
     // The id of the interval
-    protected interval : number = 0;
-
-    // update delegate
-    private handler : TimerHandler = this.update;
+    protected interval : NodeJS.Timer;
     
+    constructor() {
+        console.log("BasicService created.");
+    }
+
     // Start the service
     start(updateRate: number, startInstantly : boolean): void {
         this.updateRate = updateRate;
         if (!this.interval) {
-            this.interval = setInterval(this.handler, this.interval)
+            this.interval = setInterval(() => this.update(), this.updateRate)
         }
         
         if (startInstantly) {
@@ -25,15 +26,15 @@ export default abstract class BasicService implements IService {
     
     // Stop the service
     stop(): void {
-        if (this.interval) {
-            clearInterval(this.interval)
-            this.interval = 0;
-        }
+        clearInterval(this.interval)
     }
     
     // Update the currently stored data
     abstract update() : any;
     
     // Get the most recently available data 
-    abstract getData() : any;
+    abstract get data() : any;
+
+    // callback on update
+    abstract callback : any;
 }

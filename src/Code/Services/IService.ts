@@ -1,9 +1,3 @@
-// -----------------------------------------------------------------------------
-// Author: Jonathan Weatherspoon
-// File: IService.ts
-// Date: May 31, 2019
-// -----------------------------------------------------------------------------
-
 // Service contract
 export default interface IService {
     // Start the service
@@ -15,6 +9,6 @@ export default interface IService {
     // Manually call the service 
     update() : any;
 
-    // Get the most recently available api data 
-    getData() : any;
+    // Callback on update
+    callback : any;
 }

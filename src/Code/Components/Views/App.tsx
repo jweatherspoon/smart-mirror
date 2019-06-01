@@ -1,9 +1,11 @@
 import React from 'react';
+import WeatherWidgetView from './WeatherWidgetView';
+import ClockWidgetView from './ClockWidgetView';
 
-const App = (_) => {
+const App = () => {
   return (
     <div className="App">
-      
+      <ClockWidgetView />
     </div>
   );
 }

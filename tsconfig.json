@@ -6,11 +6,16 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": [
+        "node",
+        "react",
+        "react-dom",
+        "jest"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",

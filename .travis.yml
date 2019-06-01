@@ -12,4 +12,4 @@ matrix:
     - name: "Unit Tests"
       node_js: "10.15.0"
 
-script: npm test --watchAll=false
+script: npm test

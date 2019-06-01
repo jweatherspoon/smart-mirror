@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 
-const WeatherWidgetView = (_) => (
-    <div></div>
-);
+// weather widget property contract
+interface WeatherWidgetViewProps {
 
-export default WeatherWidgetView;
+}
+
+// Widget for displaying weather data
+export default class WeatherWidgetView extends Component<WeatherWidgetViewProps> {
+    constructor(props : WeatherWidgetViewProps) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div></div>
+        )
+    }
+}

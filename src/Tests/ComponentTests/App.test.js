@@ -8,6 +8,4 @@ describe("App view tests.", () => {
         ReactDOM.render(<App />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
-
-    test("Test that fails.", () => expect(false).toBe(true));
 });
